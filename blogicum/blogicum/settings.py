@@ -2,14 +2,15 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-e59xw)vcfkr-0cr*v98$xb8a8f1a)##0szqh2ofonby8_9t+bg'
+SECRET_KEY = 'django-insecure-h^x!s$7=hrv2rx%nt2zgxg7_%2h7$njw4n32*r(4=06^p61^hk'
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 INSTALLED_APPS = [
+    'pages.apps.PagesConfig',
+    'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -33,7 +34,7 @@ ROOT_URLCONF = 'blogicum.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,7 +73,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -83,13 +83,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-
 STATIC_URL = '/static/'
+
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static_dev',
 ]
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
